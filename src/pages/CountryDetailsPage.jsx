@@ -38,11 +38,11 @@ function CountryDetails() {
             </tr>
             <tr>
                 <td>Borders</td>
-                <td><div className="list-group">
+                <td><ul>
         {countryDetail.borders.map((r)=>{ return(
-        <a className="list-group-item list-group-item-action text-decoration-none">
+        <li style={{listStyle:'none'}}>
             <Link to={'/'+r}>{r}</Link>
-        </a>)})}</div>
+        </li>)})}</ul>
                 </td>
             </tr>
         </tbody>
