@@ -11,7 +11,7 @@ function CountryDetails() {
     useEffect(()=>{
         axios.get(countryUrl)
         .then(response=>{setCountryDetail(response.data)})
-        .catch(err=>console.log(err))},[])
+        .catch(err=>console.log(err))},[param.countryId])
 
     console.log(countryDetail)
     if (countryDetail==null){
@@ -41,7 +41,7 @@ function CountryDetails() {
                 <td><ul>
         {countryDetail.borders.map((r)=>{ return(
         <li style={{listStyle:'none'}}>
-            <Link to={'/'+r}>{r}</Link>
+            <Link to={'/'+r} refresh={true}>{r}</Link>
         </li>)})}</ul>
                 </td>
             </tr>
